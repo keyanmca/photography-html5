@@ -1,9 +1,3 @@
-<section style="display: none">
-    <?php
-        phpinfo();
-    ?>
-</section>
-
 <section class="photos">
     <?php
         foreach($albums as $album)
@@ -20,7 +14,7 @@
         <li>
             <a href="<?=base_href . 'album/' . album_collection::slug($album->title());?>.html" title="<?=$photo->title();?>">
                 <figure>
-                    <img src="<?=$photo_sizes[2]->source; ?>" width="<?=$photo_sizes[2]->width; ?>" height="<?=$photo_sizes[2]->height; ?>" alt="<?=$photo->description(); ?>" />
+                    <img src="<?=$photo_sizes[3]->source; ?>" width="<?=$photo_sizes[3]->width; ?>" height="<?=$photo_sizes[3]->height; ?>" alt="<?=$photo->description(); ?>" />
                     <figcaption>
                         <?= $count < 1 ? $album->title():'';?>
                     </figcaption>

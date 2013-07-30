@@ -115,6 +115,26 @@ class photo
                                                     'sizes' => $this->_sizes
         )));
     }
+    
+    public function as_array()
+    {
+        $photo = array( 'id' => $this->_id,
+                        'rotation' => $this->_rotation,
+                        'title' => $this->_title,
+                        'description' => $this->_description,
+                        'ispublic' => $this->_ispublic,
+                        'isfriend' => $this->_isfriend,
+                        'isfamily' => $this->_isfamily,
+                        'date_posted' => $this->_date_posted,
+                        'date_taken' => $this->_date_taken,
+                        'views' => $this->_views,
+                        'sizes' => array()
+        );
+        foreach($this->_sizes as $size){
+            $photo['sizes'][] = (array)$size;
+        }
+        return $photo;
+    }
 }
 
 ?>

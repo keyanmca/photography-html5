@@ -5,6 +5,7 @@ class album_collection
     { 
         $albums = array();
         $flickr_model = new flickr_model();
+        
         $flickr_photosets_object = $flickr_model->fetch_photo_sets()->photosets->photoset;
         foreach($flickr_photosets_object as $flickr_photoset)
         {

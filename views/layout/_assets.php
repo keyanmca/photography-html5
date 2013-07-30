@@ -1,5 +1,4 @@
 <link rel="stylesheet" type="text/css" media="screen" href="<?=base_href;?>styles/default.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="<?=base_href;?>styles/css3.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="<?=base_href;?>styles/animations.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="<?=base_href;?>styles/browser.css" />
 <?php 
@@ -10,3 +9,15 @@
 <?php
     }
 ?>
+<?php
+    if(isset($photos_json))
+    {
+?>
+<script type="text/javascript">
+    var photos_json = <?= $photos_json; ?>;
+</script>
+<?php
+    }
+?>
+<script type="text/javascript" src="<?=base_href;?>js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="<?=base_href;?>js/main.js"></script>

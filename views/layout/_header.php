@@ -3,6 +3,6 @@
         Matt Finucane
     </h1>
     <h2>
-        Photographer
+        Photography
     </h2>
 </header>

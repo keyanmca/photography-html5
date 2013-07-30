@@ -1,1 +1,3 @@
-<?php echo 'Send me data'; ?>
+<?php
+	echo 'I am a form data submit';
+?>

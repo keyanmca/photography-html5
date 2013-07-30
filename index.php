@@ -5,7 +5,7 @@
     include_once('models/album_collection_model.php');
     include_once('models/album_model.php');
     include_once('models/photo_model.php');
-    include_once('models/apccache_model.php');
+    include_once('models/memcache_model.php');
     $page = $_REQUEST['page'];
     
     switch($page)
@@ -14,6 +14,7 @@
         {
             $album = album::album_from_slug($_REQUEST['album']);
             $photos = $album->photos();
+            $photos_json = $album->album_as_json();
             break;
         }
         case 'albums':
@@ -25,8 +26,14 @@
         { 
             break;
         }
-    }
-    
+    }  
+?>
+
+<?php
+    switch($_REQUEST['return_type'])
+    {
+        case 'html':
+        {
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,3 +49,15 @@
         </section>
     </body>
 </html>
+<?php
+            break;
+        }
+        case 'snppt':
+        {
+            include_once('views/'.$_REQUEST['page'].'.php');
+            break;
+        }
+    }
+?>
+
+

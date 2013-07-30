@@ -22,3 +22,7 @@
 .photopile:hover li:nth-child(5){
     -moz-transform: rotate(20deg) translate(1em);
 }
+
+.fullscreen-link:hover{
+    -moz-box-shadow: 0 0 8px 5px #fff;
+}

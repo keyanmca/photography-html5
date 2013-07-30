@@ -1,9 +1,9 @@
 RewriteEngine On
 
-RewriteRule		^/?$							index.php?page=albums				[L]
-RewriteRule             ^album/([a-z0-9-]+).html$                               index.php?page=album&album=$1                   [L]
-RewriteRule             ^([a-z]+).html$                                         index.php?page=$1                               [L]
-RewriteRule             ^photo/([0-9]+).html$                                   index.php?page=photo&photo_id=$1                [L]                                 
+RewriteRule		^/?$                                                    index.php?page=albums&return_type=html 		[L]
+RewriteRule             ^album/([a-z0-9-]+).(html|snppt)$                       index.php?page=album&album=$1&return_type=$2    [L]
+RewriteRule             ^([a-z]+).(html|snppt)$                                 index.php?page=$1&return_type=$2                [L]
+RewriteRule             ^photo/([0-9]+).(html|snppt)$                           index.php?page=photo&photo_id=$1&return_type=$2 [L]                            
 
 
 RewriteCond		%{HTTP_USER_AGENT} "MSIE"
@@ -23,4 +23,5 @@ RewriteRule		^images/([a-z]+).(jpg|png)$				assets/images/$1.$2				[L]
 
 RewriteRule             ^getalbums/?$                                           controllers/photo_controller.php?action=albums  [L]
 RewriteRule             ^getalbum/([a-zA-Z0-9_-]+)/?$                           controllers/photo_controller.php?action=album   [L] 
-RewriteRule             ^photo/([0-9]+)$                                        controllers/photo_controller.php?action=photo&id=$1 [L]
+RewriteRule             ^photo/([0-9]+)$                                        controllers/photo_controller.php?action=photoasjson&photo_id=$1 [L]
+

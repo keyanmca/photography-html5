@@ -167,9 +167,11 @@ section.photos, section.content{
 }
 
 .album ul li{
+    position: relative;
     display: inline;
     float: left;
     background-color: #f5f5f5;
+    z-index: 20;
 }
 
 .album a{
@@ -188,21 +190,8 @@ section.photos, section.content{
     vertical-align: middle;
 }
 
-.album a:hover{
-    z-index: 20;
-}
-
-#photo{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-color: #f5f5f5;
-    image-rendering: optimizeQuality;
+.album li:hover{
+    z-index: 21 !important;
 }
 
 /*  Camera and me   */
@@ -263,4 +252,130 @@ section.photos, section.content{
 
 .me{
     background-image: url('../images/matt.jpg');
+}
+
+#photo{
+    position: fixed;
+    display: none;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #f5f5f5;
+    image-rendering: optimizeQuality;
+    z-index: 1250;
+}
+
+#moreinfo{
+    position: fixed;
+    display: none;
+    left: 10px;
+    opacity: 0.8;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+}
+
+.photo-text{
+    display: inline;
+    float: left;
+    color: #000;
+}
+
+@media all and (min-width: 720px){
+    #moreinfo{
+        width: 1000px;
+        height: 200px;
+        bottom: 10px;
+    }
+    .photo-text{
+        width: 500px;
+        min-height: 200px;
+    }
+    .photo-text:first-child{
+        width: 498px;
+        border-right: 2px solid #333;
+    }
+}
+
+@media all and (max-width: 320px){
+    #moreinfo{
+        width: 300px;
+        height: 280px;
+        bottom: 50px;
+    }
+    .photo-text{
+        width: 300px;
+        min-height: 140px;
+    }
+    .photo-text:first-child{
+        width: 300px;
+        min-height: 138px
+        border-bottom: 2px solid #333;
+    }
+}
+
+.photo-text h3, .photo-text p{
+    display: inline;
+    float: left;
+    clear: both;
+    margin: 10px;
+    
+}
+
+.fullscreen-link{
+    position: fixed;
+    background-color: #000;
+    text-align: center;
+    text-decoration: none;
+    font-style: italic;
+    font-family: georgia, serif;
+    opacity: 0.8;
+}
+
+@media all and (min-width: 480px){
+    .fullscreen-link{
+        width: 60px;
+        height: 60px;
+        line-height: 55px;
+        border-radius: 60px;
+        font-size: 3em;
+    }
+    #info-link{
+        bottom: 30px;
+        right: 30px;
+    }
+    #close-link{
+        bottom: 30px;
+        right: 110px;
+    }
+}
+
+@media all and (max-width: 480px){
+    .fullscreen-link{
+        width: 30px;
+        height: 30px;
+        line-height: 27px;
+        border-radius: 30px;
+        font-size: 1em;
+    }
+    #info-link{
+        bottom: 10px;
+        right: 10px;
+    }
+    #close-link{
+        bottom: 10px;
+        right: 45px;
+    }
+}
+
+.fullscreen-link:hover{
+    text-decoration: none;
+    box-shadow: 0 0 8px 5px #fff;
+}
+
+.white-highlighted{
+    box-shadow: 0 0 8px 5px #fff;
 }

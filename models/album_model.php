@@ -33,8 +33,9 @@ class album
         $flickr_photos = $flickr_model->photoset_photos($this->_id)->photoset->photo;
         foreach($flickr_photos as $flickr_photo)
         {
-            $flickr_photo_info = $flickr_model->photo_info($flickr_photo->id)->photo;
+            $flickr_photo_info = $flickr_model->photo_info($flickr_photo->id)->photo; 
             $flickr_photo_sizes = $flickr_model->photo_sizes($flickr_photo->id)->sizes->size;
+            
             $addable_photo = new photo($flickr_photo_info, $flickr_photo_sizes);
             
             if(!$addable_photo->orientation())
@@ -62,6 +63,20 @@ class album
     public function photos()
     {
         return $this->_photos;
+    }
+    
+    public function album_as_json()
+    {
+        $album_as_array = array(    'id' => $this->_id,
+                                    'title' => $this->_title,
+                                    'description' => $this->_description,
+                                    'photos' => array()
+        );
+        foreach($this->_photos as $photo)
+        {
+            $album_as_array['photos'][] = ($photo->as_array());
+        }
+        return json_encode($album_as_array);
     }
     
     public function count()
