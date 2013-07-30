@@ -1,0 +1,24 @@
+.photopile li , .album li{
+    -moz-box-shadow: 3px 3px 5px #777;
+    -moz-transition: all 0.4s ease-in-out;
+}
+
+.photopile:hover li:nth-child(1){
+    -moz-transform: rotate(10deg) translate(-1em);
+}
+
+.photopile:hover li:nth-child(2){
+    -moz-transform: rotate(5deg) translate(0.5em);
+}
+
+.photopile:hover li:nth-child(3){
+    -moz-transform: rotate(-10deg) translate(1em);
+}
+
+.photopile:hover li:nth-child(4){
+    -moz-transform: rotate(-15deg) translate(1em);
+}
+
+.photopile:hover li:nth-child(5){
+    -moz-transform: rotate(20deg) translate(1em);
+}

@@ -1,0 +1,31 @@
+/*
+.photopile li a{  
+    -webkit-transition: all 0.1s ease-in-out;
+}
+
+.photopile:hover li:nth-child(1) a{
+    -webkit-transform: rotate(10deg);
+}
+
+.photopile:hover li:nth-child(3) a{
+    -webkit-transform: rotate(-10deg);
+}
+*/
+
+@keyframes first-photo-rotate{
+    from {transform: 0deg;}
+    to {transform: 10deg;}
+}
+
+@keyframes third-photo-rotate{
+    from {transform: 0deg;}
+    to {transform: -10deg;}
+}
+
+.photopile:hover li:nth-child(1) a{
+    animation: first-photo-rotate 2s;
+}
+
+.photopile:hover li:nth-child(3) a{
+    animation: third-photo-rotate 2s;
+}

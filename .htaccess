@@ -1,0 +1,26 @@
+RewriteEngine On
+
+RewriteRule		^/?$							index.php?page=albums				[L]
+RewriteRule             ^album/([a-z0-9-]+).html$                               index.php?page=album&album=$1                   [L]
+RewriteRule             ^([a-z]+).html$                                         index.php?page=$1                               [L]
+RewriteRule             ^photo/([0-9]+).html$                                   index.php?page=photo&photo_id=$1                [L]                                 
+
+
+RewriteCond		%{HTTP_USER_AGENT} "MSIE"
+RewriteRule		^styles/browser.css$					assets/css/trident.css				[L]
+
+RewriteCond		%{HTTP_USER_AGENT} "Safari"	[OR]
+RewriteCond		%{HTTP_USER_AGENT} "Chrome"	
+RewriteRule		^styles/browser.css$					assets/css/webkit.css				[L]
+
+RewriteCond		%{HTTP_USER_AGENT} "Mozilla"					
+RewriteRule		^styles/browser.css$					assets/css/gecko.css				[L]
+
+RewriteRule             ^styles/scatter_([0-9]+).css$                           assets/css/scatter.php?count=$1                 [L]
+RewriteRule		^styles/([a-z0-9]+).css$                                assets/css/$1.css				[L]
+RewriteRule		^js/([a-z0-9\.-]+).js$					assets/js/$1.js					[L]
+RewriteRule		^images/([a-z]+).(jpg|png)$				assets/images/$1.$2				[L]
+
+RewriteRule             ^getalbums/?$                                           controllers/photo_controller.php?action=albums  [L]
+RewriteRule             ^getalbum/([a-zA-Z0-9_-]+)/?$                           controllers/photo_controller.php?action=album   [L] 
+RewriteRule             ^photo/([0-9]+)$                                        controllers/photo_controller.php?action=photo&id=$1 [L]

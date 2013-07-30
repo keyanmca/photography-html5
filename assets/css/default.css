@@ -1,0 +1,266 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+
+html *{
+    padding: 0px; 
+    margin: 0px;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    font-size: 11pt;
+    color: #555;
+    font-family: 'Lucida Sans Unicode','Lucida Grande',sans-serif;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.wrapper{
+    display: inline;
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 100%;
+}
+
+/*  The heading of the pages    */
+
+h1, h2, ul.nav, section.photos{
+    display: inline;
+    float: left;
+    clear: both;
+}
+
+h1{
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 5% 0px 0px 5%;
+    clear: both;
+}
+
+h2{
+    font-size: 13pt;
+    font-weight: normal;
+    margin: 5px 0px 0px 5%; 
+}
+
+ul.nav{
+    margin: 30px 0px 0px 5%;
+    list-style: none;
+}
+
+ul.nav li{
+    display: inline;
+    float: left;
+    padding-right: 10px;
+}
+
+ul.nav li:after{
+    content: '/';
+} 
+
+ul.nav li:last-child:after{
+    content: '';
+}
+
+/*  Photo albums    */
+
+section.photos, section.content{
+    display: inline;
+    float: left;
+    width: 95%;
+    margin: 0px 0px 0px 5%;
+    padding: 0px 0px 5% 0px;
+}
+
+.photopile{
+    display: inline;
+    float: left;
+    width: 300px;
+    min-height: 240px;
+    margin: 50px 5px 0px 0px;
+    position: relative;
+    list-style: none;
+}
+
+.photopile li{
+    position: absolute;
+    width: 240px;
+    min-height: 200px;
+    padding: 5px 5px 0px 5px;
+    background-color: #f5f5f5;
+}
+
+.photopile li a{
+    display: inline;
+    float: left;
+}
+
+.photopile li a:hover{
+    text-decoration: none;
+}
+
+.photopile li a figure{
+    display: inline;
+    float: left;
+}
+
+.photopile li a figure img{
+    display: inline;
+    float: left;
+}
+
+.photopile li a figure figcaption{
+    display: inline;
+    float: left;
+    width: 230px;
+    clear: both;
+    padding: 0px 5px 0px 5px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.photopile li:nth-child(1){
+    z-index: 4;
+}
+
+.photopile li:nth-child(2){
+    z-index: 3;
+}
+
+.photopile li:nth-child(3){
+    z-index: 2;
+}
+
+.photopile li:nth-child(4){
+    z-index: 1;
+}
+
+.photopile li:nth-child(5){
+    z-index: 0;
+}
+
+/*  Album page */
+
+.album{
+    position: relative;
+    display: inline;
+    float: left;
+    width: 95%;
+    margin: 0px 0px 0px 5%;
+    padding: 40px 0px 5% 0px;
+}
+
+.album ul{
+    display: inline;
+    float: left;
+}
+
+.album ul li{
+    display: inline;
+    float: left;
+    background-color: #f5f5f5;
+}
+
+.album a{
+    display: inline;
+    float: left;
+}
+
+.album a figure{
+    display: table-cell;
+    padding: 0px 5px 0px 5px;
+    height: 200px;
+    vertical-align: middle;
+}
+
+.album a figure img{
+    vertical-align: middle;
+}
+
+.album a:hover{
+    z-index: 20;
+}
+
+#photo{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #f5f5f5;
+    image-rendering: optimizeQuality;
+}
+
+/*  Camera and me   */
+
+.content article{
+    display: inline;
+    float: left;
+    width: 45%;
+    padding: 5% 5% 5% 0%;
+}
+
+.content article p, .content article h3, .content article h4{
+    display: inline;
+    float: left;
+    clear: both;
+    line-height: 1.2em;
+}
+
+.content article h3, .content article h4{
+    font-weight: bold;
+    margin: 5px 0px 5px 0px;
+}
+
+.content article h3{
+    margin: 5px 0px 15px 0px;
+}
+
+.content article p{
+    text-align: left;
+    margin: 5px 0px 15px 0px;
+}
+
+.content article p a{
+    border-bottom: 1px dotted #555;
+}
+
+.content article p a:hover{
+    text-decoration: none;
+    border-bottom: 2px dotted #555;
+}
+
+.my-camera, .me{
+    display: inline;
+    float: left;
+    width: 45%;
+    min-height: 600px;
+    padding: 5% 0px 0px 0px;
+    background-repeat: no-repeat;
+    background-size: contain;    
+    background-position: center;
+    background-color: #fff;
+    image-rendering: optimizeQuality;
+}
+
+.my-camera{
+    background-image: url('../images/camera.jpg');
+}
+
+.me{
+    background-image: url('../images/matt.jpg');
+}
